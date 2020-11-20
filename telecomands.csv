@@ -1,0 +1,11 @@
+code,subcode,parameter
+request,beacon,beacon
+request,platform,obc
+request,platform,eps
+request,platform,aocs
+request,payload,payload
+log,log,padding
+subsystem,payload,on
+log,log,padding
+subsytem,payload,off
+log,log,padding
