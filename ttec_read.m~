@@ -30,6 +30,7 @@ et_ssid = 0;
 sc_callsign = 'CUBES1';
 sc_ssid = 0;
 %%
+% message = [hex2dec('DE') hex2dec('AD')];
 parameter = ["obc" "eps" "aocs" "payload" "beacon" "padding"];
 message = tcParameter("beacon");
 fcs = crc16(message);
@@ -42,6 +43,7 @@ data_packet = dataPacket(cmd_codes(1),cmd_subcodes(1),information);
 ax42_header = ax42header(et_callsign,et_ssid,sc_callsign,sc_ssid);
 %%
 space_packet = [ax42_header data_packet];
+compose("%X",dec2hex(space_packet,2))
 
 %% Saving the workspace
 save telecomands.mat space_packet
