@@ -1,0 +1,45 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright (C) 2020 - INPE - CubeDesign Virtual
+% Carlos L GOMES BATISTA - LabV&VSiS
+%
+% Limited use for the CubeDesign Virtual
+% Tracking, Telemetry and Commands Subsystem Challenge
+%
+% Date of creation: 14/09/2020
+%
+% Version: 1.0
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function data_packet = dataPacket(code,subcode,information)
+    if code == 'request'
+        cmd_code = 01;
+    elseif code == 'subsystem'
+        cmd_code = 02;
+    elseif code == 'log'
+        cmd_code = 04;
+    else
+        cmd_code = 255;
+    end
+    
+    if subcode == 'beacon'
+        cmd_subcode = 04
+    elseif subcode == 'platform'
+        cmd_subcode = 02;
+    elseif subcode == 'pay'
+        cmd_subcode = 04;
+    else
+        cmd_subcode == 255;
+    end
+  info_length = length(information);
+  data_packet_header = [cmd_code subcode info_length];
+  data_packet = [data_packet_header information];
+end

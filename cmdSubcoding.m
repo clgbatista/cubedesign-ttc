@@ -19,11 +19,20 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function data_packet = dataPacket(code,subcode,information)
-    cmd_code = cmdCoding(code);
-    cmd_subcode = cmdSubcoding(subcode);
-    
-    info_length = length(information);
-    data_packet_header = [cmd_code cmd_subcode info_length];
-    data_packet = [data_packet_header information];
+function cmd_subcode = cmdSubcoding(subcode)
+    if subcode == 'beacon'
+        cmd_subcode = 04;
+    elseif subcode == 'platform'
+        cmd_subcode = 01;
+    elseif subcode == 'payload'
+        cmd_subcode = 02;
+    elseif subcode == 'on'
+        cmd_subcode = 01;
+    elseif subcode == 'off'
+        cmd_subcode = 02;
+    elseif subcode == 'log'
+        cmd_subcode = 01;
+    else
+        cmd_subcode = 255;
+    end
 end
