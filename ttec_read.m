@@ -42,5 +42,6 @@ ax42_header = ax42header(et_callsign,et_ssid,sc_callsign,sc_ssid);
 %%
 space_packet = [ax42_header data_packet];
 
+%% Saving the workspace
 save telecomands.mat space_packet
 
