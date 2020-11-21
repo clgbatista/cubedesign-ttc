@@ -27,17 +27,17 @@ function tc_parameter = tcParameter(parameter)
     bitmask = 0;
     rng(0); % random seed
     switch parameter
-        case 'obc'
+        case "obc"
             bitmask = [0 1];
-        case 'eps'
+        case "eps"
             bitmask = [0 2];
-        case 'aocs'
+        case "aocs"
             bitmask = [0 4];
-        case 'payload'
+        case "payload"
             bitmask = [0 8];
-        case 'beacon'
+        case "beacon"
             bitmask = [0 0];
-        case 'padding'
+        case "padding"
             bitmask  = randi(255,1,2);
     end
     tc_parameter = bitmask;
