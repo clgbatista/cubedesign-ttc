@@ -25,7 +25,7 @@
 
 function tc_parameter = tcParameter(parameter)
     bitmask = 0;
-    rng(0); % random seed
+%     rng(0); % random seed
     switch parameter
         case "obc"
             bitmask = [0 1];

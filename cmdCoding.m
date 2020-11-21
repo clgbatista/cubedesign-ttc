@@ -20,11 +20,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function cmd_code = cmdCoding(code)
-    if code == 'request'
+    if code == "request"
         cmd_code = 01;
-    elseif code == 'subsystem'
+    elseif code == "subsystem"
         cmd_code = 02;
-    elseif code == 'log'
+    elseif code == "log"
         cmd_code = 04;
     else
         cmd_code = 255;
