@@ -22,7 +22,7 @@
 function cmd_code = cmdCoding(code)
     if code == "request"
         cmd_code = 01;
-    elseif code == "subsystem"
+    elseif code == "power"
         cmd_code = 02;
     elseif code == "log"
         cmd_code = 04;

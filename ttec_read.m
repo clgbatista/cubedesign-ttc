@@ -33,7 +33,6 @@ sc_ssid = 0;
 telecomands = (table2array(readtable("telecomands.csv")));
 
 for i=1:length(telecomands)
-    disp(telecomands(i,:))
     ax42_header(i,:) = ax42header(et_callsign,et_ssid,sc_callsign,sc_ssid);
     cmd_codes = cell2mat(telecomands(i,1));
     cmd_subcodes = cell2mat(telecomands(i,2));

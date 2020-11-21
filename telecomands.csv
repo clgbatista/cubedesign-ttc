@@ -5,7 +5,7 @@ request,platform,eps
 request,platform,aocs
 request,payload,payload
 log,log,padding
-subsystem,on,payload
+power,on,payload
 log,log,padding
-subsystem,off,payload
+power,off,payload
 log,log,padding
