@@ -27,9 +27,10 @@ clear
 
 sc_callsign = 'CUBES1';
 sc_ssid = 0;
+filename = "telecomands.csv"
 
 %% Telecommands generation
-tc_generated = tcGeneration(sc_callsign,sc_ssid,"telecomands.csv");
+tc_generated = tcGeneration(sc_callsign,sc_ssid,filename);
 
 %% Saving the workspace
 save telecomands.mat tc_generated

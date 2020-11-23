@@ -19,10 +19,10 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function data_packet = dataPacket(code,subcode,information)
+function data_packet = dataPacket(code,subcode,information,flen)
     cmd_code = cmdCoding(code);
     cmd_subcode = cmdSubcoding(subcode);
-    info_length = length(information);
+    info_length = length(information)+flen;
     data_packet_header = [cmd_code cmd_subcode 0 info_length];
     data_packet = [data_packet_header information];
 end
