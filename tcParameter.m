@@ -13,22 +13,32 @@
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
+% 
 %
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function ax42_header = ax42header(from_call,from_ssid,to_call,to_ssid)
-  SYNC_BYTE = hex2dec('2A');
-  CALLSIGN_SIZE = 6;
-  CONTROL = hex2dec('03');
-  PID = hex2dec('F0');
-  %
-  for i=1:CALLSIGN_SIZE 
-    aux_from(i) = double(from_call(i));
-    aux_to(i) = double(to_call(i));
-  end
-  %
-  ax42_header = [SYNC_BYTE aux_from from_ssid aux_to to_ssid CONTROL PID];
+%
+%
+%
+
+function tc_parameter = tcParameter(parameter)
+    bitmask = 0;
+%     rng(0); % random seed
+    switch parameter
+        case "obc"
+            bitmask = [0 1];
+        case "eps"
+            bitmask = [0 2];
+        case "aocs"
+            bitmask = [0 4];
+        case "payload"
+            bitmask = [0 8];
+        case "beacon"
+            bitmask = [0 0];
+        case "padding"
+            bitmask  = [randi(255,1) 0];
+    end
+    tc_parameter = bitmask;
 end
