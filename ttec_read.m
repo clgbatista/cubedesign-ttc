@@ -27,7 +27,7 @@ clear
 
 sc_callsign = 'CUBES1';
 sc_ssid = 0;
-filename = "telecomands.csv"
+filename = "telecomands.csv";
 
 %% Telecommands generation
 tc_generated = tcGeneration(sc_callsign,sc_ssid,filename);
