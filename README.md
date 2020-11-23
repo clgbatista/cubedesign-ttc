@@ -1,3 +1,6 @@
+> **ATENTTION** The Requirements RQ-TTC-231 and RQ-TTC-232 regarding the use BPSK modulation for both uplink and downlink will not be put into account.
+> Due to version problems the CubeDesign Vitual staff decided to not include these requirements as part of the challenge.
+
 # CUBE DESIGN VIRTUAL 2020
 -----------------------------------------------
 
@@ -32,6 +35,10 @@ It is mandatory that your sollution should provide, as output:
 
 1. a .mat file as evidence that you are cappable of decode the telecomands;
 2. another .mat file with the telemetry frames as requested by the input flight plans (csv files) and its telecomands.
+
+Does not matter the use of Simulink or the MATLab Script, or both of them, for the development of the solution.
+
+It is up to you the choose of the tool that better fits you.
 
 ### List of Telemetries and Commands by Service
 
