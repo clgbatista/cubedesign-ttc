@@ -1,6 +1,9 @@
 # CUBE DESIGN VIRTUAL 2020
+-----------------------------------------------
 
 All rights reserved.
+
+[TOC]
 
 ## Tracking, Telemetry and Command Subsystem
 
@@ -21,6 +24,15 @@ git clone https://github.com/clgbatista/cubedesign-ttc.git
 5. Run the *ttec_read.m* file to autogenerate the command frames.
 
 ### The Challenge
+
+The challenge of the TT&C subsytem, includes the the succesfully interpretation of the Telecommands sended to the spacecraft and the correct mounting and coding of the Telemetries to be sended to the ground segment.
+
+In terms of modelling/scripting the list of Telecomands will be generated as an MATLab Workspace (.mat file) from the *ttec_read.m* file.
+
+It is mandatory that your sollution should provide, as output:
+
+1. a .mat file as evidence that you are cappable of decode the telecomands;
+2. another .mat file with the telemetry frames as requested by the input flight plans (csv files) and its telecomands.
 
 ### List of Telemetries and Commands by Service
 
@@ -135,7 +147,19 @@ Last received Command	|Last Error on Reception
 16B ASCII Char		|16B ASCII Char
 
 >**Last Received Command**:
+
 >This telemetry field must return the last succesfull received command name.
 
 >**Last Error on Reception**:
+
 >This telemetry field must return the last unsuccesfull received command reason, due to heuristics. 
+
+## Final Classification
+
+The grades will follow the rules explained at the Official TT&C Challenge Document.
+
+The points marked here on this repository gives an extra effort to the teams in order to not only code/decode frames, but also decrypting he information on each frame.
+
+Due to this, the activities involving the correct interpretation of the commands and correct response with the telemetries will be used as an multiplier for the team's final grade, at a maximum of x100% multiplier. 
+
+
