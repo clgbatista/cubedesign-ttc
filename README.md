@@ -3,9 +3,8 @@
 
 All rights reserved.
 
-[TOC]
-
 ## Tracking, Telemetry and Command Subsystem
+-----------------------------------------------
 
 ### How to use this repository
 
@@ -158,7 +157,7 @@ Last received Command	|Last Error on Reception
 
 The grades will follow the rules explained at the Official TT&C Challenge Document.
 
-The points marked here on this repository gives an extra effort to the teams in order to not only code/decode frames, but also decrypting he information on each frame.
+The points marked here on this repository gives an extra effort to the teams in order to not only code/decode frames, but also decrypting the information on each frame.
 
 Due to this, the activities involving the correct interpretation of the commands and correct response with the telemetries will be used as an multiplier for the team's final grade, at a maximum of x100% multiplier. 
 
