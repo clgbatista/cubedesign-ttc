@@ -33,5 +33,5 @@ for i = 1:length(packet)
         crc = bitand( crc, hex2dec('ffff') );  % trim to 16 bits
     end
 end
-hex = dec2hex(crc);
+hex = dec2hex(crc,4);
 end

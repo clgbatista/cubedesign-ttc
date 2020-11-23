@@ -38,7 +38,7 @@ function tc_parameter = tcParameter(parameter)
         case "beacon"
             bitmask = [0 0];
         case "padding"
-            bitmask  = randi(255,1,2);
+            bitmask  = [randi(255,1) 0];
     end
     tc_parameter = bitmask;
 end
