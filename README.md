@@ -44,11 +44,11 @@ Code	|Subcode	|Length	|Parameter	| Info
 
 mask		| subsystem
 ----------------|---------------------------
-0x00		| Beacon (only on subcode 0x04)
-0x01		| OBC (only on subcode 0x01)
-0x02		| EPS (only on subcode 0x01)
-0x04		| AOCS (only on subcode 0x01)
-0x08		| Payload (only on subcode 0x02)
+0x0000		| Beacon (only on subcode 0x04)
+0x0001		| OBC (only on subcode 0x01)
+0x0002		| EPS (only on subcode 0x01)
+0x0004		| AOCS (only on subcode 0x01)
+0x0008		| Payload (only on subcode 0x02)
 
 ##### Telemetries
 
@@ -95,7 +95,7 @@ OBC State	| AOCS State	| Payload On/Off	|Padding
 
 This service allows the control of the power sourcing for the subsystems.
 
-he bitmask only works for the payload condition.
+The bitmask only works for the payload condition, 0x0008.
 
 ##### Commands
 
@@ -118,9 +118,9 @@ On this demand two information wil be provided by the spacecraft:
 
 ##### Commands
 
-Code	|Subcode	|Length	|Parameter	| Info
---------|---------------|-------|---------------|------
-0x04	|0x01		|0x0004	|16 random bits	| Event Log
+Code	|Subcode	|Length	|Parameter1	|Parameter2	| Info
+--------|---------------|-------|---------------|---------------|------------
+0x04	|0x01		|0x0004	|8 random bits	|0x00		| Event Log
 
 ##### Telemetries
 
@@ -134,8 +134,8 @@ Last received Command	|Last Error on Reception
 ------------------------|--------------------------
 16B ASCII Char		|16B ASCII Char
 
->Last Received Command
+>**Last Received Command**:
 >This telemetry field must return the last succesfull received command name.
 
->Last Error on Reception
+>**Last Error on Reception**:
 >This telemetry field must return the last unsuccesfull received command reason, due to heuristics. 
