@@ -45,6 +45,7 @@ It is up to you the choose of the tool that better fits you.
 The telemetry .mat file must have the telemetry frames as char arrays with the hexadecimal representation.
 
 >*Example*
+
 Variable          |Size         |Value
 ------------------|-------------|---------------
 *OBC Telemetry*   |n x 14       |'00112233445566778899AABBCCDD'
