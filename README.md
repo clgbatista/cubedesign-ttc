@@ -50,7 +50,8 @@ Variable          |Size         |Value
 ------------------|-------------|---------------
 *OBC Telemetry*   |n x 14       |'00112233445566778899AABBCCDD'
 *EPS Telemetry*   |n x 14       |'00112233445566778899AABBCCDD'
-*AOCS Telemetry*  |n x 24       |'00112233445566778899AABBCCDDEEFF0011223344556677'
+*AOCS Telemetry*  |n x 14       |'00112233445566778899AABBCCDD'
+*Beacon*		  |n x 24       |'00112233445566778899AABBCCDDEEFF0011223344556677'
 
 ### List of Telemetries and Commands by Service
 
