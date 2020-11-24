@@ -40,6 +40,17 @@ Does not matter the use of Simulink or the MATLab Script, or both of them, for t
 
 It is up to you the choose of the tool that better fits you.
 
+#### Telemetry .mat File
+
+The telemetry .mat file must have the telemetry frames as char arrays with the hexadecimal representation.
+
+>*Example*
+Variable          |Size         |Value
+------------------|-------------|---------------
+*OBC Telemetry*   |n x 14       |'00112233445566778899AABBCCDD'
+*EPS Telemetry*   |n x 14       |'00112233445566778899AABBCCDD'
+*AOCS Telemetry*  |n x 24       |'00112233445566778899AABBCCDDEEFF0011223344556677'
+
 ### List of Telemetries and Commands by Service
 
 #### Requesting, code 0x01
@@ -74,7 +85,7 @@ Code	|Subcode	|Length	|Timestamp	| Data
 --------|---------------|-------|---------------|------
 0x01	|0x01		|0x000E	|4-byte UTC time| Platform Frame
 0x01	|0x02		|0x000E	|4-byte UTC time| Payload Frame
-0x01	|0x04		|0x000E	|4-byte UTC time| Beacon Frame
+0x01	|0x04		|0x0032	|4-byte UTC time| Beacon Frame
 
 ###### Platform Frame
 
@@ -107,7 +118,7 @@ Payload On/Off	|Payload State
 
 OBC State	| AOCS State	| Payload On/Off	|Padding
 ----------------|---------------|-----------------------|--------
-3B ASCII Char	|3B ASCII Char	|3B ASCII Char		|Unused 1B
+6B ASCII Char	|6B ASCII Char	|3B ASCII Char		|Unused 1B
 
 #### Power, code 0x02
 
