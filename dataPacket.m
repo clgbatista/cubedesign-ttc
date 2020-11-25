@@ -19,7 +19,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function data_packet = dataPacket(code,subcode,information,flen,,fcode,fsubcode)
+function data_packet = dataPacket(code,subcode,information,flen,fcode,fsubcode)
     cmd_code = cmdCoding(code);
     cmd_subcode = cmdSubcoding(subcode);
     info_length = length(information)+flen;
