@@ -19,10 +19,13 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function data_packet = dataPacket(code,subcode,information,flen,fcode,fsubcode)
+function data_packet = dataPacket(code,subcode,information,flen,fcode,fsubcode,ffcs)
     cmd_code = cmdCoding(code);
     cmd_subcode = cmdSubcoding(subcode);
-    info_length = length(information)+flen;
+    info_length = length(information)+2+flen;
     data_packet_header = [cmd_code+fcode cmd_subcode+fsubcode 0 info_length];
-    data_packet = [data_packet_header information];
+    data_packet_frame = [data_packet_header information];
+    [fcs, hex]= crc16(data_packet_frame);
+    check = [hex2dec(hex(1,1:2))+ffcs hex2dec(hex(1,3:4))];
+    data_packet = [data_packet_frame check];
 end
