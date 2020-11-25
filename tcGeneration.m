@@ -23,9 +23,12 @@ function tc_hex = tcGeneration(sc_callsign,sc_ssid,filename)
 
 et_callsign = 'CUBED0';
 et_ssid = 0;
-
-telecomands = (table2array(readtable(filename)));
-
+try
+  telecomands = table2array(readtable(filename));
+catch 
+  [a b c d] = textread(filename,'%s,%s,%s,%s','delimiter',',');
+  telecomands = [a(2:end) b(2:end) c(2:end) d(2:end)];
+end
     for i=1:length(telecomands)
         ax42_header(i,:) = ax42header(et_callsign,et_ssid,sc_callsign,sc_ssid);
         cmd_codes = cell2mat(telecomands(i,1));
