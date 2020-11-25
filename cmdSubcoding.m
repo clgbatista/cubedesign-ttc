@@ -20,17 +20,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function cmd_subcode = cmdSubcoding(subcode)
-    if subcode == "beacon"
+%    if subcode == "beacon"
+    if strcmpi('beacon',subcode)
         cmd_subcode = 04;
-    elseif subcode == "platform"
-        cmd_subcode = 01;
-    elseif subcode == "payload"
+%    elseif subcode == "platform"
+    elseif strcmpi('platform',subcode)
+          cmd_subcode = 01;
+%    elseif subcode == "payload"
+    elseif strcmpi('payload',subcode)
         cmd_subcode = 02;
-    elseif subcode == "on"
+%    elseif subcode == "on"
+    elseif strcmpi('on',subcode)
         cmd_subcode = 01;
-    elseif subcode == "off"
+%    elseif subcode == "off"
+    elseif strcmpi('off',subcode)
         cmd_subcode = 02;
-    elseif subcode == "log"
+%    elseif subcode == "log"
+    elseif strcmpi('log',subcode)
         cmd_subcode = 01;
     else
         cmd_subcode = 255;

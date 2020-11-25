@@ -20,11 +20,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function cmd_code = cmdCoding(code)
-    if code == "request"
+%    if code == "request"
+    if strcmpi('request',code)
         cmd_code = 01;
-    elseif code == "power"
+%    elseif code == "power"
+    elseif strcmpi('power',code)
         cmd_code = 02;
-    elseif code == "log"
+%    elseif code == "log"
+    elseif strcmpi('log',code)
         cmd_code = 04;
     else
         cmd_code = 255;
