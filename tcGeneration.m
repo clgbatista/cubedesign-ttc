@@ -37,7 +37,7 @@ telecomands = (table2array(readtable(filename)));
         [fcs, hex]= crc16(message);
         check = [hex2dec(hex(1,1:2))+ffcs hex2dec(hex(1,3:4))];
         information(i,:) = [message+2*fparam check];
-        data_packet(i,:) = dataPacket(cmd_codes,cmd_subcodes,information(i,:),flen);
+        data_packet(i,:) = dataPacket(cmd_codes,cmd_subcodes,information(i,:),flen,fcode,fsubcode);
         space_packet(i,:) = [ax42_header(i,:) data_packet(i,:)];
     end
     
