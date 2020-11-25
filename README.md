@@ -87,7 +87,7 @@ Code	|Subcode	|Length	|Timestamp	| Data
 --------|---------------|-------|---------------|------
 0x01	|0x01		|0x000E	|4-byte UTC time| Platform Frame
 0x01	|0x02		|0x000E	|4-byte UTC time| Payload Frame
-0x01	|0x04		|0x0032	|4-byte UTC time| Beacon Frame
+0x01	|0x04		|0x0014	|4-byte UTC time| Beacon Frame
 
 ###### Platform Frame
 
