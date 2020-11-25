@@ -34,10 +34,11 @@ telecomands = (table2array(readtable(filename)));
         faulty_frame = cell2mat(telecomands(i,4));
         [flen fcode fsubcode fparam ffcs] = fault_inj(faulty_frame);
         message = tcParameter(parameter);
-        [fcs, hex]= crc16(message);
-        check = [hex2dec(hex(1,1:2))+ffcs hex2dec(hex(1,3:4))];
-        information(i,:) = [message+2*fparam check];
-        data_packet(i,:) = dataPacket(cmd_codes,cmd_subcodes,information(i,:),flen,fcode,fsubcode);
+%        [fcs, hex]= crc16(message);
+%        check = [hex2dec(hex(1,1:2))+ffcs hex2dec(hex(1,3:4))];
+%        information(i,:) = [message+2*fparam check];
+        information(i,:) = [message+2*fparam];
+        data_packet(i,:) = dataPacket(cmd_codes,cmd_subcodes,information(i,:),flen,fcode,fsubcode,ffcs);
         space_packet(i,:) = [ax42_header(i,:) data_packet(i,:)];
     end
     
